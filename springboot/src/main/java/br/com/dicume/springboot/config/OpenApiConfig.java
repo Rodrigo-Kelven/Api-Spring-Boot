@@ -26,6 +26,7 @@ public class OpenApiConfig {
     }
 
     // Bean para impedir que os endpoints de actuador sejam exibidos no swagger!
+    /*
     @Bean
     public GroupedOpenApi actuatorApi() {
         // Configura para não exibir os endpoints do actuator na documentação
@@ -34,4 +35,5 @@ public class OpenApiConfig {
                 .pathsToExclude("/actuator/**") // Exclui os endpoints do actuator
                 .build();
     }
+    */
 }
