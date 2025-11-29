@@ -1,5 +1,6 @@
 package br.com.dicume.springboot.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,10 +30,20 @@ public class ProductModel implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID id;
+	
+	@Column(nullable = false, unique = false)
 	private String name;
+	
+	@Column(nullable = false, unique = false)
 	private BigDecimal price;
+	
+	@Column(nullable = false, unique = false)
 	private String category;
+	
+	@Column(nullable = false, unique = false)
 	private String description;
+	
+	@Column(nullable = false, unique = false)
 	private String supplier;
 	
 	// Construtor que recebe o DTO
