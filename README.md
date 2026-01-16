@@ -44,7 +44,7 @@
             │   │   ├── java
             │   │   │   └── br
             │   │   │       └── com
-            │   │   │           └── dicume
+            │   │   │           └── allgoods
             │   │   │               └── springboot
             │   │   │                   ├── config
             │   │   │                   │   ├── OpenApiConfig.java
