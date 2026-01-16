@@ -1,4 +1,4 @@
-package br.com.dicume.springboot;
+package br.com.allgoods.springboot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

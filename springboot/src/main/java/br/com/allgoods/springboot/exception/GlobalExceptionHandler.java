@@ -1,4 +1,4 @@
-package br.com.dicume.springboot.exception;
+package br.com.allgoods.springboot.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

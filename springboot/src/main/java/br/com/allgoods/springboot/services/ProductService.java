@@ -1,4 +1,4 @@
-package br.com.dicume.springboot.services;
+package br.com.allgoods.springboot.services;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -8,10 +8,10 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import br.com.dicume.springboot.dtos.ProductRecordDto;
-import br.com.dicume.springboot.exception.ResourceNotFoundException;
-import br.com.dicume.springboot.models.ProductModel;
-import br.com.dicume.springboot.repositories.ProductRepository;
+import br.com.allgoods.springboot.dtos.ProductRecordDto;
+import br.com.allgoods.springboot.exception.ResourceNotFoundException;
+import br.com.allgoods.springboot.models.ProductModel;
+import br.com.allgoods.springboot.repositories.ProductRepository;
 
 import java.math.BigDecimal;
 import java.util.List;

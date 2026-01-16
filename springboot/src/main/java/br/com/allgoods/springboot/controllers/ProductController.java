@@ -1,13 +1,13 @@
-package br.com.dicume.springboot.controllers;
+package br.com.allgoods.springboot.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.validation.annotation.Validated;
 
-import br.com.dicume.springboot.dtos.ProductRecordDto;
-import br.com.dicume.springboot.models.ProductModel;
-import br.com.dicume.springboot.services.ProductService;
+import br.com.allgoods.springboot.dtos.ProductRecordDto;
+import br.com.allgoods.springboot.models.ProductModel;
+import br.com.allgoods.springboot.services.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

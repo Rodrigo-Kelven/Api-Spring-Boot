@@ -1,4 +1,4 @@
-package br.com.dicume.springboot.dtos;
+package br.com.allgoods.springboot.dtos;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

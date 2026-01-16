@@ -1,4 +1,4 @@
-package br.com.dicume.springboot.models;
+package br.com.allgoods.springboot.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,7 +12,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-import br.com.dicume.springboot.dtos.ProductRecordDto;
+import br.com.allgoods.springboot.dtos.ProductRecordDto;
 
 @Entity
 @Table(name = "TB_PRODUCTS")

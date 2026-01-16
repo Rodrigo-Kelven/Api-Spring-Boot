@@ -1,4 +1,4 @@
-package br.com.dicume.springboot.config;
+package br.com.allgoods.springboot.config;
 
 
 import org.springframework.context.annotation.Configuration;
