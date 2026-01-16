@@ -21,7 +21,7 @@ public class WebConfig implements WebMvcConfigurer {
      // Configuração CORS específica para o endpoint de login
         registry.addMapping("/login") // Rota específica de login
                 .allowedOrigins("http://login.example.com") // Permite apenas o domínio de login
-                .allowedMethods("POST") // Permite apenas o método POST para login
+                .allowedMethods("POST") // Permite apenas o metodo POST para login
                 .allowedHeaders("*") // Permite todos os headers
                 .allowCredentials(true) // Permite credenciais (cookies, tokens, etc.)
                 .maxAge(3600); // Tempo máximo para o cache das permissões CORS
