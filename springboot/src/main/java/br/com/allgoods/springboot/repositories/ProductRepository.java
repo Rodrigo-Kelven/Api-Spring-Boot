@@ -10,15 +10,5 @@ import br.com.allgoods.springboot.models.ProductModel;
 
 @Repository
 public interface ProductRepository extends JpaRepository<ProductModel, UUID>{
-	// Método para buscar produtos dentro de um intervalo de preço usando BigDecimal
-    List<ProductModel> findByPriceBetween(BigDecimal min, BigDecimal max);
-    
-	// Método para buscar produtos com base no nome
-    List<ProductModel> findByName(String name);
-    
-	// Método para buscar produtos com base no fornecedor/supplier
-    List<ProductModel> findBySupplier(String supplier);
-    
- // Método para buscar produtos com base na categoria
-    List<ProductModel> findByCategory(String category);
+
 }
