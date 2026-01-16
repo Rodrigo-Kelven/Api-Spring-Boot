@@ -1,4 +1,4 @@
-package br.com.allgoods.springboot.config;
+package br.com.allgoods.springboot.config.cors;
 
 
 import org.springframework.context.annotation.Configuration;

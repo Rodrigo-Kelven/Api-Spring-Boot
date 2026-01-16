@@ -1,6 +1,5 @@
-package br.com.allgoods.springboot.config;
+package br.com.allgoods.springboot.config.swagger;
 
-import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import io.swagger.v3.oas.models.info.Info;
@@ -14,9 +13,9 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
             .info(new Info()
-                .title("API Dicume")
+                .title("API All Goods")
                 .version("0.1.7")
-                .description("Esta é a documentação da API Dicume.")
+                .description("Esta é a documentação da API Foods All Goods.")
                 .termsOfService("https://github.com/Rodrigo-Kelven/Api-Spring-Boot")
                 .contact(new io.swagger.v3.oas.models.info.Contact()
                     .name("Suporte API")
