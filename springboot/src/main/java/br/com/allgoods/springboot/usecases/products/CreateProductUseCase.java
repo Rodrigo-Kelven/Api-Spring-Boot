@@ -1,5 +1,6 @@
 package br.com.allgoods.springboot.usecases.products;
 
+import br.com.allgoods.springboot.domain.product.ProductModel;
 import br.com.allgoods.springboot.infrastructure.web.dtos.ProductForm;
 import br.com.allgoods.springboot.infrastructure.web.dtos.ProductResponseDto;
 import br.com.allgoods.springboot.infrastructure.persistence.entity.ProductEntity;
@@ -17,17 +18,16 @@ public class CreateProductUseCase {
     }
 
     @Transactional
-    public ProductResponseDto execute(ProductForm productForm) {
-        ProductEntity productEntity = new ProductEntity(
-                null,
-                productForm.name(),
-                productForm.price(),
-                productForm.description(),
-                productForm.category(),
-                productForm.supplier()
+    public ProductResponseDto execute(ProductForm form) {
+        ProductModel model = new ProductModel(
+                form.name(),
+                form.description(),
+                form.category(),
+                form.price(),
+                form.supplier()
         );
 
-        ProductEntity savedProduct = productRepository.save(productEntity);
+            ProductEntity savedProduct = productRepository.save(model);
 
         return new ProductResponseDto(
                 savedProduct.getId(),

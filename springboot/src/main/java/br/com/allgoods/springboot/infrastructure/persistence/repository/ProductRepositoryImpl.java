@@ -1,5 +1,6 @@
 package br.com.allgoods.springboot.infrastructure.persistence.repository;
 
+import br.com.allgoods.springboot.domain.product.ProductModel;
 import br.com.allgoods.springboot.infrastructure.persistence.entity.ProductEntity;
 import br.com.allgoods.springboot.port.ProductRepository;
 import org.springframework.data.domain.Page;
@@ -20,9 +21,20 @@ public class ProductRepositoryImpl implements ProductRepository {
 
 
     @Override
-    public ProductEntity save(ProductEntity product) {
-        return productRepositoryConcret.save(product);
+    public ProductEntity save(ProductModel product) {
+        ProductEntity entity = new ProductEntity(
+                null,
+                product.getName(),
+                product.getPrice(),
+                product.getDescription(),
+                product.getCategory(),
+                product.getSupplier()
+        );
+
+
+        return productRepositoryConcret.save(entity);
     }
+
 
     @Override
     public Page<ProductEntity> findAll(int page, int size) {
