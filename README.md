@@ -39,46 +39,44 @@
 - Grafana: Para geração e visualização de dashboard de dados da aplicação.
 
 ### Estrutura do Projeto.
-        ├── src
-        │   ├── main
-        │   │   ├── java
-        │   │   │   └── br
-        │   │   │       └── com
-        │   │   │           └── allgoods
-        │   │   │               └── springboot
-        │   │   │                   ├── config
-        │   │   │                   │   ├── cors
-        │   │   │                   │   │   └── WebConfig.java
-        │   │   │                   │   └── swagger
-        │   │   │                   │       └── OpenApiConfig.java
-        │   │   │                   ├── domain
-        │   │   │                   │   └── product
-        │   │   │                   │       └── Product.java
-        │   │   │                   ├── exception
-        │   │   │                   │   ├── GlobalExceptionHandler.java
-        │   │   │                   │   └── ResourceNotFoundException.java
-        │   │   │                   ├── infrastructure
-        │   │   │                   │   ├── persistence
-        │   │   │                   │   │   ├── entity
-        │   │   │                   │   │   │   └── ProductEntity.java
-        │   │   │                   │   │   └── repository
-        │   │   │                   │   │       ├── ProductRepositoryConcret.java
-        │   │   │                   │   │       └── ProductRepositoryImpl.java
-        │   │   │                   │   └── web
-        │   │   │                   │       ├── controllers
-        │   │   │                   │       │   └── ProductController.java
-        │   │   │                   │       └── dtos
-        │   │   │                   │           ├── ProductForm.java
-        │   │   │                   │           └── ProductResponseDto.java
-        │   │   │                   ├── port
-        │   │   │                   │   └── ProductRepository.java
-        │   │   │                   ├── SpringbootApplication.java
-        │   │   │                   └── usecases
-        │   │   │                       └── products
-        │   │   │                           ├── CreateProductUseCase.java
-        │   │   │                           ├── DeleteProductUseCase.java
-        │   │   │                           ├── FindAllProductsUseCase.java
-        │   │   │                           └── FindByIdProductUseCase.java               
+    ├── src
+    │   ├── main
+    │   │   ├── java
+    │   │   │   └── br
+    │   │   │       └── com
+    │   │   │           └── allgoods
+    │   │   │               └── springboot
+    │   │   │                   ├── config
+    │   │   │                   │   ├── cors
+    │   │   │                   │   │   └── WebConfig.java
+    │   │   │                   │   └── swagger
+    │   │   │                   │       └── OpenApiConfig.java
+    │   │   │                   ├── domain
+    │   │   │                   │   └── ProductModel.java
+    │   │   │                   ├── exception
+    │   │   │                   │   ├── GlobalExceptionHandler.java
+    │   │   │                   │   └── ResourceNotFoundException.java
+    │   │   │                   ├── infrastructure
+    │   │   │                   │   ├── persistence
+    │   │   │                   │   │   ├── entity
+    │   │   │                   │   │   │   └── ProductEntity.java
+    │   │   │                   │   │   └── repository
+    │   │   │                   │   │       ├── ProductRepositoryConcret.java
+    │   │   │                   │   │       └── ProductRepositoryImpl.java
+    │   │   │                   │   └── web
+    │   │   │                   │       ├── controllers
+    │   │   │                   │       │   └── ProductController.java
+    │   │   │                   │       └── dtos
+    │   │   │                   │           ├── ProductForm.java
+    │   │   │                   │           └── ProductResponseDto.java
+    │   │   │                   ├── port
+    │   │   │                   │   └── ProductRepository.java
+    │   │   │                   ├── SpringbootApplication.java
+    │   │   │                   └── usecases
+    │   │   │                       ├── CreateProductUseCase.java
+    │   │   │                       ├── DeleteProductUseCase.java
+    │   │   │                       ├── FindAllProductsUseCase.java
+    │   │   │                       └── FindByIdProductUseCase.java            
 
 ### Como rodar:
 - #### Subir o banco e sua interfaçe em container:
