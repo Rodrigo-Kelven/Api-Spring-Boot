@@ -1,4 +1,4 @@
-package br.com.allgoods.springboot.usecases.products;
+package br.com.allgoods.springboot.usecases;
 
 import br.com.allgoods.springboot.infrastructure.web.dtos.ProductResponseDto;
 import br.com.allgoods.springboot.exception.ResourceNotFoundException;

@@ -1,10 +1,10 @@
 package br.com.allgoods.springboot.infrastructure.web.controllers;
 
 import br.com.allgoods.springboot.infrastructure.web.dtos.ProductResponseDto;
-import br.com.allgoods.springboot.usecases.products.CreateProductUseCase;
-import br.com.allgoods.springboot.usecases.products.DeleteProductUseCase;
-import br.com.allgoods.springboot.usecases.products.FindAllProductsUseCase;
-import br.com.allgoods.springboot.usecases.products.FindByIdProductUseCase;
+import br.com.allgoods.springboot.usecases.CreateProductUseCase;
+import br.com.allgoods.springboot.usecases.DeleteProductUseCase;
+import br.com.allgoods.springboot.usecases.FindAllProductsUseCase;
+import br.com.allgoods.springboot.usecases.FindByIdProductUseCase;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;

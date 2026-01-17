@@ -1,4 +1,4 @@
-package br.com.allgoods.springboot.usecases.products;
+package br.com.allgoods.springboot.usecases;
 
 import br.com.allgoods.springboot.infrastructure.persistence.entity.ProductEntity;
 import br.com.allgoods.springboot.exception.ResourceNotFoundException;

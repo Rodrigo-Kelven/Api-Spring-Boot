@@ -1,4 +1,4 @@
-package br.com.allgoods.springboot.usecases.products;
+package br.com.allgoods.springboot.usecases;
 
 import br.com.allgoods.springboot.domain.ProductModel;
 import br.com.allgoods.springboot.infrastructure.web.dtos.ProductForm;
