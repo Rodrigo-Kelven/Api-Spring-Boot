@@ -45,38 +45,39 @@
     │   │   │   └── br
     │   │   │       └── com
     │   │   │           └── allgoods
-    │   │   │               └── springboot
+    │   │   │               ├── AllgoodsApplication.java
+    │   │   │               ├── application
+    │   │   │               │   ├── exception
+    │   │   │               │   │   ├── GlobalExceptionHandler.java
+    │   │   │               │   │   └── ResourceNotFoundException.java
+    │   │   │               │   ├── ports
+    │   │   │               │   │   ├── in
+    │   │   │               │   │   │   └── ProductUseCase.java
+    │   │   │               │   │   └── out
+    │   │   │               │   │       └── ProductRepository.java
+    │   │   │               │   └── service
+    │   │   │               │       └── ProductService.java
+    │   │   │               ├── domain
+    │   │   │               │   └── ProductModel.java
+    │   │   │               └── infrastructure
+    │   │   │                   ├── adapter
+    │   │   │                   │   ├── dtos
+    │   │   │                   │   │   ├── ProductForm.java
+    │   │   │                   │   │   └── ProductResponseDto.java
+    │   │   │                   │   ├── in
+    │   │   │                   │   │   └── ProductController.java
+    │   │   │                   │   └── out
+    │   │   │                   │       └── ProductRepositoryImpl.java
     │   │   │                   ├── config
     │   │   │                   │   ├── cors
     │   │   │                   │   │   └── WebConfig.java
     │   │   │                   │   └── swagger
     │   │   │                   │       └── OpenApiConfig.java
-    │   │   │                   ├── domain
-    │   │   │                   │   └── ProductModel.java
-    │   │   │                   ├── exception
-    │   │   │                   │   ├── GlobalExceptionHandler.java
-    │   │   │                   │   └── ResourceNotFoundException.java
-    │   │   │                   ├── infrastructure
-    │   │   │                   │   ├── persistence
-    │   │   │                   │   │   ├── entity
-    │   │   │                   │   │   │   └── ProductEntity.java
-    │   │   │                   │   │   └── repository
-    │   │   │                   │   │       ├── ProductRepositoryConcret.java
-    │   │   │                   │   │       └── ProductRepositoryImpl.java
-    │   │   │                   │   └── web
-    │   │   │                   │       ├── controllers
-    │   │   │                   │       │   └── ProductController.java
-    │   │   │                   │       └── dtos
-    │   │   │                   │           ├── ProductForm.java
-    │   │   │                   │           └── ProductResponseDto.java
-    │   │   │                   ├── port
-    │   │   │                   │   └── ProductRepository.java
-    │   │   │                   ├── SpringbootApplication.java
-    │   │   │                   └── usecases
-    │   │   │                       ├── CreateProductUseCase.java
-    │   │   │                       ├── DeleteProductUseCase.java
-    │   │   │                       ├── FindAllProductsUseCase.java
-    │   │   │                       └── FindByIdProductUseCase.java            
+    │   │   │                   └── persistence
+    │   │   │                       ├── entity
+    │   │   │                       │   └── ProductEntity.java
+    │   │   │                       └── repository
+    │   │   │                           └── ProductRepositoryConcret.java
 
 ### Como rodar:
 - #### Subir o banco e sua interfaçe em container:
