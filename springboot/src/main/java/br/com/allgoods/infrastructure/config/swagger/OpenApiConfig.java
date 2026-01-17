@@ -1,4 +1,4 @@
-package br.com.allgoods.application.config.swagger;
+package br.com.allgoods.infrastructure.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
