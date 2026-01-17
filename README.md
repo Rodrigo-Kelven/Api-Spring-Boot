@@ -1,7 +1,7 @@
 
 # Api Spring Boot
 
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) 
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 ![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)
 ![JUnit](https://img.shields.io/badge/Junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white)
@@ -39,32 +39,47 @@
 - Grafana: Para geração e visualização de dashboard de dados da aplicação.
 
 ### Estrutura do Projeto.
-            ├── src
-            │   ├── main
-            │   │   ├── java
-            │   │   │   └── br
-            │   │   │       └── com
-            │   │   │           └── allgoods
-            │   │   │               └── springboot
-            │   │   │                   ├── config
-            │   │   │                   │   ├── OpenApiConfig.java
-            │   │   │                   │   └── WebConfig.java
-            │   │   │                   ├── controllers
-            │   │   │                   │   └── ProductController.java
-            │   │   │                   ├── dtos
-            │   │   │                   │   └── ProductRecordDto.java
-            │   │   │                   ├── exception
-            │   │   │                   │   ├── GlobalExceptionHandler.java
-            │   │   │                   │   └── ResourceNotFoundException.java
-            │   │   │                   ├── models
-            │   │   │                   │   └── ProductModel.java
-            │   │   │                   ├── repositories
-            │   │   │                   │   └── ProductRepository.java
-            │   │   │                   ├── services
-            │   │   │                   │   └── ProductService.java
-            │   │   │                   └── SpringbootApplication.java
-                
-        
+        ├── src
+        │   ├── main
+        │   │   ├── java
+        │   │   │   └── br
+        │   │   │       └── com
+        │   │   │           └── allgoods
+        │   │   │               └── springboot
+        │   │   │                   ├── config
+        │   │   │                   │   ├── cors
+        │   │   │                   │   │   └── WebConfig.java
+        │   │   │                   │   └── swagger
+        │   │   │                   │       └── OpenApiConfig.java
+        │   │   │                   ├── domain
+        │   │   │                   │   └── product
+        │   │   │                   │       └── Product.java
+        │   │   │                   ├── exception
+        │   │   │                   │   ├── GlobalExceptionHandler.java
+        │   │   │                   │   └── ResourceNotFoundException.java
+        │   │   │                   ├── infrastructure
+        │   │   │                   │   ├── persistence
+        │   │   │                   │   │   ├── entity
+        │   │   │                   │   │   │   └── ProductEntity.java
+        │   │   │                   │   │   └── repository
+        │   │   │                   │   │       ├── ProductRepositoryConcret.java
+        │   │   │                   │   │       └── ProductRepositoryImpl.java
+        │   │   │                   │   └── web
+        │   │   │                   │       ├── controllers
+        │   │   │                   │       │   └── ProductController.java
+        │   │   │                   │       └── dtos
+        │   │   │                   │           ├── ProductForm.java
+        │   │   │                   │           └── ProductResponseDto.java
+        │   │   │                   ├── port
+        │   │   │                   │   └── ProductRepository.java
+        │   │   │                   ├── SpringbootApplication.java
+        │   │   │                   └── usecases
+        │   │   │                       └── products
+        │   │   │                           ├── CreateProductUseCase.java
+        │   │   │                           ├── DeleteProductUseCase.java
+        │   │   │                           ├── FindAllProductsUseCase.java
+        │   │   │                           └── FindByIdProductUseCase.java               
+
 ### Como rodar:
 - #### Subir o banco e sua interfaçe em container:
         docker compose up
