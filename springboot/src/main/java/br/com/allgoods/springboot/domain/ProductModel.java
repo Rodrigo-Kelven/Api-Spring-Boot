@@ -1,4 +1,4 @@
-package br.com.allgoods.springboot.domain.product;
+package br.com.allgoods.springboot.domain;
 
 import java.math.BigDecimal;
 import java.util.UUID;

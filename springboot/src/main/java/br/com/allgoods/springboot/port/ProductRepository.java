@@ -1,6 +1,6 @@
 package br.com.allgoods.springboot.port;
 
-import br.com.allgoods.springboot.domain.product.ProductModel;
+import br.com.allgoods.springboot.domain.ProductModel;
 import br.com.allgoods.springboot.infrastructure.persistence.entity.ProductEntity;
 import org.springframework.data.domain.Page;
 import java.util.Optional;

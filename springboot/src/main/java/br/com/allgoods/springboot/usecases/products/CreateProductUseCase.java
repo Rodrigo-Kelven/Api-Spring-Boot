@@ -1,6 +1,6 @@
 package br.com.allgoods.springboot.usecases.products;
 
-import br.com.allgoods.springboot.domain.product.ProductModel;
+import br.com.allgoods.springboot.domain.ProductModel;
 import br.com.allgoods.springboot.infrastructure.web.dtos.ProductForm;
 import br.com.allgoods.springboot.infrastructure.web.dtos.ProductResponseDto;
 import br.com.allgoods.springboot.infrastructure.persistence.entity.ProductEntity;
