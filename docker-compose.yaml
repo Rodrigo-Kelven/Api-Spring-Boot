@@ -1,4 +1,3 @@
-version: '3.8'
 
 services:
   postgres:
@@ -14,7 +13,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
-      - monitoring
+      - database
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "postgres"]
       interval: 30s
@@ -34,74 +33,15 @@ services:
     depends_on:
       - postgres
     networks:
-      - monitoring
+      - database
 
-  rabbitmq:
-    image: rabbitmq:management
-    container_name: rabbitmq
-    restart: always
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    environment:
-      RABBITMQ_DEFAULT_USER: guest
-      RABBITMQ_DEFAULT_PASS: guest
-    networks:
-      - monitoring
-
-  sonarqube:
-    image: sonarqube:latest
-    container_name: sonarqube
-    restart: always
-    ports:
-      - "9000:9000"
-    environment:
-      SONARQUBE_JDBC_URL: jdbc:postgresql://postgres:5432/sonar
-      SONARQUBE_JDBC_USERNAME: postgres
-      SONARQUBE_JDBC_PASSWORD: postgres
-    depends_on:
-      - postgres
-    volumes:
-      - sonarqube_data:/opt/sonarqube/data
-      - sonarqube_extensions:/opt/sonarqube/extensions
-      - sonarqube_logs:/opt/sonarqube/logs
-    networks:
-      - monitoring
-
-  prometheus:
-    image: prom/prometheus:latest
-    container_name: prometheus
-    ports:
-      - "9090:9090"
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-      - prometheus_data:/prometheus
-    restart: always
-    networks:
-      - monitoring
-
-  grafana:
-    image: grafana/grafana:latest
-    container_name: grafana
-    ports:
-      - "3000:3000"
-    environment:
-      - GF_SECURITY_ADMIN_PASSWORD=admin
-    restart: always
-    depends_on:
-      - prometheus
-    networks:
-      - monitoring
 
 networks:
-  monitoring:
+  database:
     driver: bridge
-    name: monitoring
+    name: database
     internal: false
 
 volumes:
   postgres_data:
-  sonarqube_data:
-  sonarqube_extensions:
-  sonarqube_logs:
-  prometheus_data:
+
