@@ -1,4 +1,4 @@
-package br.com.allgoods.domain;
+package br.com.allgoods.application.core.domain;
 
 import java.math.BigDecimal;
 import java.util.UUID;

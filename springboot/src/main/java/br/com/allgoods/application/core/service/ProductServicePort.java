@@ -1,25 +1,25 @@
-package br.com.allgoods.application.service;
+package br.com.allgoods.application.core.service;
 
 
-import br.com.allgoods.domain.ProductModel;
+import br.com.allgoods.application.core.domain.ProductModel;
 import br.com.allgoods.application.exception.ResourceNotFoundException;
 import br.com.allgoods.infrastructure.persistence.entity.ProductEntity;
 import br.com.allgoods.infrastructure.adapter.dtos.ProductForm;
 import br.com.allgoods.infrastructure.adapter.dtos.ProductResponseDto;
-import br.com.allgoods.application.ports.in.ProductUseCase;
-import br.com.allgoods.application.ports.out.ProductRepository;
+import br.com.allgoods.application.ports.inbound.ProductUseCasePort;
+import br.com.allgoods.application.ports.outbound.ProductRepositoryPort;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
 @Service
-public class ProductService implements ProductUseCase {
+public class ProductServicePort implements ProductUseCasePort {
 
-    private final ProductRepository productRepository;
+    private final ProductRepositoryPort productRepositoryPort;
 
-    public ProductService(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    public ProductServicePort(ProductRepositoryPort productRepositoryPort) {
+        this.productRepositoryPort = productRepositoryPort;
     }
 
     @Override
@@ -33,7 +33,7 @@ public class ProductService implements ProductUseCase {
                 productForm.supplier()
         );
 
-        ProductEntity savedProduct = productRepository.save(model);
+        ProductEntity savedProduct = productRepositoryPort.save(model);
 
         return new ProductResponseDto(
                 savedProduct.getId(),
@@ -47,7 +47,7 @@ public class ProductService implements ProductUseCase {
 
     @Override
     public Page<ProductResponseDto> getAllProducts(int page, int size){
-        Page<ProductEntity> products = productRepository.findAll(page, size);
+        Page<ProductEntity> products = productRepositoryPort.findAll(page, size);
 
         if (products.isEmpty()) {
             throw new ResourceNotFoundException("Nenhum produto encontrado.");
@@ -67,7 +67,7 @@ public class ProductService implements ProductUseCase {
 
     @Override
     public ProductResponseDto getProductById(UUID id) {
-        ProductEntity product = productRepository.findById(id)
+        ProductEntity product = productRepositoryPort.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Produto nao encontrado com id: " + id
                 ));
@@ -85,12 +85,12 @@ public class ProductService implements ProductUseCase {
 
     @Override
     public void deleteProductById(UUID id){
-        ProductEntity product = productRepository.findById(id)
+        ProductEntity product = productRepositoryPort.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Produto nao encontrado com id: " + id
                 ));
 
-        productRepository.deleteById(id);
+        productRepositoryPort.deleteById(id);
     }
 
 }

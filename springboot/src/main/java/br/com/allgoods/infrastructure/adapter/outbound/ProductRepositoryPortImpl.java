@@ -1,8 +1,8 @@
-package br.com.allgoods.infrastructure.adapter.out;
+package br.com.allgoods.infrastructure.adapter.outbound;
 
-import br.com.allgoods.domain.ProductModel;
+import br.com.allgoods.application.core.domain.ProductModel;
 import br.com.allgoods.infrastructure.persistence.entity.ProductEntity;
-import br.com.allgoods.application.ports.out.ProductRepository;
+import br.com.allgoods.application.ports.outbound.ProductRepositoryPort;
 import br.com.allgoods.infrastructure.persistence.repository.ProductRepositoryConcret;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -12,11 +12,11 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public class ProductRepositoryImpl implements ProductRepository {
+public class ProductRepositoryPortImpl implements ProductRepositoryPort {
 
     private final ProductRepositoryConcret productRepositoryConcret;
 
-    public ProductRepositoryImpl(ProductRepositoryConcret productRepositoryConcret) {
+    public ProductRepositoryPortImpl(ProductRepositoryConcret productRepositoryConcret) {
         this.productRepositoryConcret = productRepositoryConcret;
     }
 
@@ -46,6 +46,7 @@ public class ProductRepositoryImpl implements ProductRepository {
                 .map(this::toDomain);
     }
 
+
     private ProductEntity toDomain(ProductEntity entity) {
         return new ProductEntity(
                 entity.getId(),
@@ -66,4 +67,5 @@ public class ProductRepositoryImpl implements ProductRepository {
     public void deleteById(UUID id){
         productRepositoryConcret.deleteById(id);
     }
+
 }

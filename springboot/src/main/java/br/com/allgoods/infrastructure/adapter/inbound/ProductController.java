@@ -1,7 +1,7 @@
-package br.com.allgoods.infrastructure.adapter.in;
+package br.com.allgoods.infrastructure.adapter.inbound;
 
+import br.com.allgoods.application.ports.inbound.ProductUseCasePort;
 import br.com.allgoods.infrastructure.adapter.dtos.ProductResponseDto;
-import br.com.allgoods.application.ports.in.ProductUseCase;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -20,10 +20,10 @@ import java.util.UUID;
 public class ProductController {
 
 
-    private final ProductUseCase productUseCase;
+    private final ProductUseCasePort productUseCasePort;
 
-    public ProductController(ProductUseCase productUseCase) {
-        this.productUseCase = productUseCase;
+    public ProductController(ProductUseCasePort productUseCasePort) {
+        this.productUseCasePort = productUseCasePort;
     }
 
 
@@ -38,7 +38,7 @@ public class ProductController {
     public ResponseEntity<ProductResponseDto> registerProduct(@RequestBody @Valid ProductForm productForm) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .header("X-Custom-Header", "Produto criado com sucesso!!")
-                .body(productUseCase.createProducts(productForm));
+                .body(productUseCasePort.createProducts(productForm));
     }
 
     @GetMapping("/products")
@@ -53,7 +53,7 @@ public class ProductController {
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size
     ) {
-        Page<ProductResponseDto> products = productUseCase.getAllProducts(page, size);
+        Page<ProductResponseDto> products = productUseCasePort.getAllProducts(page, size);
 
         return ResponseEntity.status(HttpStatus.OK)
                 .header("X-Custom-Header", "Produtos listados encontrado!")
@@ -71,7 +71,7 @@ public class ProductController {
     public ResponseEntity<ProductResponseDto> getProductsByid(@PathVariable UUID id) {
         return ResponseEntity.status(HttpStatus.OK)
                 .header("X-Custom-Header", "Produto encontrado com sucesso!")
-                .body(productUseCase.getProductById(id));
+                .body(productUseCasePort.getProductById(id));
 
     }
 
@@ -83,11 +83,12 @@ public class ProductController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity<Void> deleteProduct(@PathVariable UUID id) {
-        productUseCase.deleteProductById(id);
+    public ResponseEntity<Void> deleteProductById(@PathVariable UUID id) {
+        productUseCasePort.deleteProductById(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT)
                 .header("X-Custom-Header", "Produto deletado com sucesso!")
                 .build();
     }
+
 
 }
