@@ -27,11 +27,9 @@ class ProductControllerKotlin(
         @RequestBody @Valid productForm: ProductForm
     ): ResponseEntity<ProductResponseDto> {
 
-        val product = productUseCasePort.createProducts(productForm)
-
         return ResponseEntity
             .status(HttpStatus.CREATED)
             .header("X-Custom-Header", "Produto criado com sucesso!!")
-            .body(product)
+            .body(productUseCasePort.createProducts(productForm))
     }
 }
