@@ -81,7 +81,9 @@
 
 ### Como rodar:
 - #### Subir o banco e sua interfaçe em container:
-        docker compose up
+        docker compose -f docker-compose.yaml up
+- #### Subir o infra:
+        docker compose -f docker-compose-infra.yaml up
 - #### Rodar API (caso não use IDE)
         mvn spring-boot:run
 - #### Para rodar os tests de qualidade de código e ser visualizado no SonarQube:
