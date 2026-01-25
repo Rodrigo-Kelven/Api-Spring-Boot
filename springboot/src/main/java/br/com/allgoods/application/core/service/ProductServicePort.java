@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
 @Service
 public class ProductServicePort implements ProductUseCasePort {
 
@@ -91,6 +93,11 @@ public class ProductServicePort implements ProductUseCasePort {
                 ));
 
         productRepositoryPort.deleteById(id);
+    }
+
+    @Override
+    public void deleteAllProducts(){
+        ProductEntity product = productRepositoryPort.deleAllProducts();
     }
 
 }

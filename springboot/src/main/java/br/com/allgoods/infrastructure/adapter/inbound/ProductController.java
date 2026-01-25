@@ -91,4 +91,21 @@ public class ProductController {
     }
 
 
+    @DeleteMapping("/products/")
+    @Operation(summary = "Delete all Product", description = "Delete all product in the system.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "Products deleted successfully"),
+            @ApiResponse(responseCode = "400", description = "Bad Request, invalid input data"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public ResponseEntity<Void> deleteAllProducts(){
+        productUseCasePort.deleteAllProducts();
+        return ResponseEntity.status(HttpStatus.NO_CONTENT)
+                .header("X-Custom-Header", "Produto deletado com sucesso!")
+                .build();
+
+    }
+
+
 }

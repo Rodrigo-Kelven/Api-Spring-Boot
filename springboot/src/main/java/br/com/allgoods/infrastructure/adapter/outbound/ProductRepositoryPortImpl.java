@@ -68,4 +68,10 @@ public class ProductRepositoryPortImpl implements ProductRepositoryPort {
         productRepositoryConcret.deleteById(id);
     }
 
+    @Override
+    public ProductEntity deleAllProducts(){
+        productRepositoryConcret.deleteAll();
+        return null;
+    }
+
 }

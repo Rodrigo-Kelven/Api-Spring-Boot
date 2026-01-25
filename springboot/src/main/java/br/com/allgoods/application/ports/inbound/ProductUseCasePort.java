@@ -12,5 +12,6 @@ public interface ProductUseCasePort {
     Page<ProductResponseDto> getAllProducts(int page, int size);
     ProductResponseDto getProductById(UUID id);
     void deleteProductById(UUID id);
+    void deleteAllProducts();
 
 }

@@ -12,5 +12,6 @@ public interface ProductRepositoryPort {
     Page<ProductEntity> findAll(int page, int size);
     Optional<ProductEntity> findById(UUID id);
     void deleteById(UUID id);
+    ProductEntity deleAllProducts();
 
 }
